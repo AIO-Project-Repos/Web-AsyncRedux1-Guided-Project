@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { func, number } from 'prop-types';
-import { addQuote } from '../state/actionCreators';
+import { postNewQuote } from '../state/actionCreators';
 
 
 export class QuoteForm extends React.Component {
@@ -10,10 +10,10 @@ export class QuoteForm extends React.Component {
   textRef = React.createRef()
 
   onAddQuote = () => {
-    this.props.addQuote(
-      this.authorRef.current.value,
-      this.textRef.current.value,
-    );
+    this.props.postNewQuote({
+      author: this.authorRef.current.value,
+      text: this.textRef.current.value,
+    });
     this.authorRef.current.value = '';
     this.textRef.current.value = '';
   }
@@ -39,7 +39,7 @@ export class QuoteForm extends React.Component {
 }
 
 QuoteForm.propTypes = {
-  addQuote: func.isRequired,
+  postNewQuote: func.isRequired,
   numberOfQuotes: number.isRequired,
 };
 
@@ -49,4 +49,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { addQuote })(QuoteForm);
+export default connect(mapStateToProps, { postNewQuote })(QuoteForm);

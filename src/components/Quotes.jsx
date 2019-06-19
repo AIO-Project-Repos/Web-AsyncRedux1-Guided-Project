@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { shape, string, arrayOf, func, bool } from 'prop-types';
 import Quote from './Quote';

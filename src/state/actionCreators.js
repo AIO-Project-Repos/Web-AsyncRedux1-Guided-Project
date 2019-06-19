@@ -67,6 +67,16 @@ export const removeQuote = (id) => dispatch => {
       dispatch(fetchQuotes());
     })
     .catch(error => {
-      debugger
-    })
+      console.log(error.message);
+    });
 };
+
+export const postNewQuote = (quote) => dispatch => {
+  axios.post('http://localhost:3000/api/quotes', quote)
+    .then(res => {
+      dispatch(fetchQuotes());
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+}
