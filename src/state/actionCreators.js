@@ -59,3 +59,7 @@ export const fetchQuotes = () => dispatch => {
       console.log(error.message);
     });
 };
+
+export const removeQuote = (/* ? */) => dispatch => {
+  // ?
+};
