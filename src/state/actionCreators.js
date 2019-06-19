@@ -47,9 +47,11 @@ export function addQuotes(quotes) {
 
 export const fetchQuotes = () => dispatch => {
   // we code
-  axios.get('http://localhost:3000/quotes')
+  axios.get('http://localhost:3000/api/quotes')
     .then(res => {
       // what do you suggest?
+      // dispatch({ type: types.ADD_QUOTES, payload: res.data }); // option 1
+      dispatch(addQuotes(res.data)); // option 2
     })
     .catch(error => {
       console.log(error.message);
