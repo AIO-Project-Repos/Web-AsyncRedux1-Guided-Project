@@ -45,6 +45,8 @@ export function addQuotes(quotes) {
   };
 }
 
+// if you try to make an action creator like this
+// without thunk... it won't work
 export const fetchQuotes = () => dispatch => {
   // we code
   axios.get('http://localhost:3000/api/quotes')
