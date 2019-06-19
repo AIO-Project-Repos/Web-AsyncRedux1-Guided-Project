@@ -45,13 +45,13 @@ export function addQuotes(quotes) {
   };
 }
 
-const fetchQuotes = () => dispatch => {
+export const fetchQuotes = () => dispatch => {
   // we code
   axios.get('http://localhost:3000')
     .then(res => {
-
+      debugger
     })
     .catch(error => {
-
+      debugger
     });
 };
