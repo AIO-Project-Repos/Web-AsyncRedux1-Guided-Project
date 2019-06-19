@@ -31,7 +31,7 @@ export class Quotes extends React.Component {
                 // STEP 13: WE GET THE ACTION CREATORS FROM PROPS
                 makeQuoteOfTheDay={this.props.makeQuoteOfTheDay}
                 markApocryphal={this.props.markApocryphal}
-                deleteQuote={this.props.deleteQuote}
+                deleteQuote={this.props.removeQuote}
               />
             ))
           }
