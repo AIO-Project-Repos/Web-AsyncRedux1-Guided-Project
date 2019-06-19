@@ -79,4 +79,4 @@ export const postNewQuote = (quote) => dispatch => {
     .catch(error => {
       console.log(error.message);
     });
-}
+};
