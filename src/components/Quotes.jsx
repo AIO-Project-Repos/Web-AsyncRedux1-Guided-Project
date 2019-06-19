@@ -9,13 +9,7 @@ import * as actionCreators from '../state/actionCreators';
 
 export class Quotes extends React.Component {
   componentDidMount() {
-    axios.get('http://localhost:3000/api/quotes')
-      .then(res => {
-        this.props.addQuotes(res.data);
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+    this.props.fetchQuotes();
   }
 
   render() {

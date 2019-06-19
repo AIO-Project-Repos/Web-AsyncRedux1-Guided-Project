@@ -1,4 +1,5 @@
 import uuid from 'uuid';
+import axios from 'axios';
 import * as types from './actionTypes';
 
 // STEP 7: CREATE ACTION CREATOR FUNCTIONS
@@ -43,3 +44,14 @@ export function addQuotes(quotes) {
     payload: quotes,
   };
 }
+
+const fetchQuotes = () => dispatch => {
+  // we code
+  axios.get('http://localhost:3000')
+    .then(res => {
+
+    })
+    .catch(error => {
+
+    });
+};
