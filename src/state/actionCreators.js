@@ -63,7 +63,8 @@ export const fetchQuotes = () => dispatch => {
 export const removeQuote = (id) => dispatch => {
   axios.delete('http://localhost:3000/api/quotes/' + id)
     .then(res => {
-      dispatch(deleteQuote(res.data));
+      // dispatch(deleteQuote(res.data));
+      dispatch(fetchQuotes());
     })
     .catch(error => {
       debugger
