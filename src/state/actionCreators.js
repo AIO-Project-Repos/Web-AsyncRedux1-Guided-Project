@@ -47,11 +47,11 @@ export function addQuotes(quotes) {
 
 export const fetchQuotes = () => dispatch => {
   // we code
-  axios.get('http://localhost:3000')
+  axios.get('http://localhost:3000/quotes')
     .then(res => {
-      debugger
+      // what do you suggest?
     })
     .catch(error => {
-      debugger
+      console.log(error.message);
     });
 };
