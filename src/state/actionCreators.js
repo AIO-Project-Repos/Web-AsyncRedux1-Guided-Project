@@ -36,3 +36,10 @@ export function addQuote(author, text) {
     },
   };
 }
+
+export function addQuotes(quotes) {
+  return {
+    type: types.ADD_QUOTES,
+    payload: quotes,
+  };
+}

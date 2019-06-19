@@ -8,6 +8,11 @@ export function quotesReducer(state = [], action) {
       return state.filter(quote => quote.id !== action.payload);
     case (types.ADD_QUOTE):
       return [...state, action.payload];
+
+    // come up with a new case
+    case (types.ADD_QUOTES):
+      return action.payload;
+
     case (types.MARK_APOCRYPHAL):
       return state.map(quote => {
         if (quote.id === action.payload) {
