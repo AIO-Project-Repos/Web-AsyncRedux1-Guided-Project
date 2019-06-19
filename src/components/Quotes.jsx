@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { shape, string, arrayOf, func, bool } from 'prop-types';
 import Quote from './Quote';
@@ -7,6 +8,16 @@ import * as actionCreators from '../state/actionCreators';
 
 
 export class Quotes extends React.Component {
+  componentDidMount() {
+    axios.get('http://localhost:3000/api/quotes')
+      .then(res => {
+        this.props.addQuotes(res.data);
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  }
+
   render() {
     const quotes = this.props.quotes || [];
 
